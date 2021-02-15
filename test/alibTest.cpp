@@ -8,6 +8,7 @@ int main()
 {
     std::cout<<"Alib";
     clrscr();
-    straightLineDecor("ALib");
-    straightLineDecor("ALib", 2);
+    decorateMe("ALib");
+    decorateMe("ALib", 2);
+    decorateMe("ALib", 3, "+");
 }

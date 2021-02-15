@@ -42,7 +42,7 @@ Maintainer:         Mushfiqur Rahman Abir
 namespace alib
 {
     // Function for dynamically decorating a text
-    void straightLineDecor(std::string textToDecor)
+    void decorateMe(std::string textToDecor)
     {
         using namespace rang;
 
@@ -69,7 +69,7 @@ namespace alib
         std::cout << std::endl;
     }
 
-    void straightLineDecor(std::string textToDecor, unsigned short int lineBreaksNumber)
+    void decorateMe(std::string textToDecor, unsigned short int lineBreaksNumber)
     {
         using namespace rang;
 
@@ -95,6 +95,38 @@ namespace alib
         for (int i = 0; i < (charSize * 2); i++)
         {
             std::cout << "_";
+        }
+        std::cout << fg::reset;
+        std::cout << std::endl;
+        std::cout << std::endl;
+    }
+
+    void decorateMe(std::string textToDecor, unsigned short int lineBreaksNumber, std::string decorator)
+    {
+        using namespace rang;
+
+        int charSize = textToDecor.capacity();
+        std::cout << std::endl;
+        std::cout << fg::red;
+        for (int i = 0; i < (charSize * 2); i++)
+        {
+            std::cout << decorator;
+        }
+        std::cout << fg::reset;
+        for (int i = 1; i <= lineBreaksNumber; i++)
+        {
+            std::cout << std::endl;
+        }
+        std::cout << fg::blue << style::bold << textToDecor << style::reset << fg::reset;
+
+        for (int i = 1; i <= lineBreaksNumber; i++)
+        {
+            std::cout << std::endl;
+        }
+        std::cout << fg::red;
+        for (int i = 0; i < (charSize * 2); i++)
+        {
+            std::cout << decorator;
         }
         std::cout << fg::reset;
         std::cout << std::endl;
