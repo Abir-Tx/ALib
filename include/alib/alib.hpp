@@ -6,6 +6,10 @@ windows and Linux operating system.
 The project is inspired from the rang project.
 
 The project is maintained by Mushfiqur Rahman Abir aka Abir-Tx.
+
+
+Current Version:    v1.0
+Maintainer:         Mushfiqur Rahman Abir
 */
 
 #if !defined(ALIB_DOT_HPP)
@@ -96,6 +100,18 @@ namespace alib
         std::cout << std::endl;
         std::cout << std::endl;
     }
+
+    /* Clears the screen depending on OS */
+    void clrscr()
+    {
+        #if defined(LINUX) || defined(MAC)
+        system("clear");
+        #elif defined(WINDOWS)
+        system("cls");
+        #endif
+    }
+
+    
 } // end of namespace alib
 
 // Undefining different platforms
