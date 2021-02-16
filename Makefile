@@ -10,10 +10,10 @@ APPTESTNAME := alibTest
 APPTESTDIR := test
 
 .PHONY: all
-all: build run
+all: testBuild testRun
 
 .PHONY: build
-buidl:
+build:
 	${CC} ${CFLAG} ${SRCDIR}/${APPNAME}.cpp ${INC} -o ${BUILDDIR}/${APPNAME}.exe
 
 
@@ -29,3 +29,8 @@ testBuild:
 .PHONY: testRun
 testRun:
 	${BUILDDIR}/${APPTESTNAME}.exe
+
+.PHONY: config
+config:
+	mkdir bin
+	mkdir src
