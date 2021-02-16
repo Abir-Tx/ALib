@@ -15,6 +15,18 @@
             "cStandard": "gnu17",
             "cppStandard": "gnu++14",
             "intelliSenseMode": "windows-gcc-x86"
+        },
+        {
+            "name": "linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/include/alib/**",
+                "${workspaceFolder}/lib/rang/**"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "gcc-x64"
         }
     ],
     "version": 4
