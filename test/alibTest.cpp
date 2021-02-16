@@ -11,7 +11,11 @@ int main()
     decorateMe("ALib");
     decorateMe("ALib", 2);
     decorateMe("ALib", 3, "+");
-
-    setConsoleTitle("ALib");
-    consoleTitle("Alib");
+	
+	std::cout<<(consoleWidth());
+    std::cout<<std::endl;
+	std::cout<<(terminalWidth());
+    std::cout<<std::endl;
+    
+	std::cout<<(consoleHeight());
 }

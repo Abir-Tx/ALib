@@ -29,6 +29,7 @@ Maintainer:         Mushfiqur Rahman Abir
 // Including platform specific files
 #if defined(LINUX) || defined(MAC)
 #include <unistd.h>
+#include <sys/ioctl.h>
 #elif defined(WINDOWS)
 #include <windows.h>
 #endif
@@ -136,23 +137,49 @@ namespace alib
     /* Clears the screen depending on OS */
     void clrscr()
     {
-        #if defined(LINUX) || defined(MAC)
+#if defined(LINUX) || defined(MAC)
         system("clear");
-        #elif defined(WINDOWS)
+#elif defined(WINDOWS)
         system("cls");
-        #endif
+#endif
     }
 
-    void setConsoleTitle(std::string consoleTitle)
+    unsigned int consoleWidth()
     {
-
-        #if defined(LINUX) || defined(MAC)
-        system(+consoleTitle.c_str());
-        #elif defined(WINDOWS)
-        std::cout<<"Hello windows";
-        #endif
+#if defined(LINUX) || defined(MAC)
+        winsize conSize;
+        ioctl(STDOUT_FILENO, TIOCGWINSZ, &conSize);
+        return conSize.ws_col;
+#elif defined(WINDOWS)
+        int width;
+        CONSOLE_SCREEN_BUFFER_INFO csbi;
+        GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+        width = (int)(csbi.dwSize.X);
+        return width;
+#endif
     }
-    #define consoleTitle setConsoleTitle
+
+    unsigned int consoleHeight()
+
+        {
+#if defined(LINUX) || defined(MAC)
+        winsize conSize;
+        ioctl(STDOUT_FILENO, TIOCGWINSZ, &conSize);
+        return conSize.ws_row;
+#elif defined(WINDOWS)
+        int height;
+        CONSOLE_SCREEN_BUFFER_INFO csbi;
+        GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+        height = (int)(csbi.dwSize.Y);
+        return height;
+#endif
+    }
+    // Alias for the consoleWidth & consoleHeight funcs
+#define terminalWidth consoleWidth
+#define terminalHeight consoleHeight
+
+
+
 } // end of namespace alib
 
 // Undefining different platforms
