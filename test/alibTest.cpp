@@ -11,6 +11,8 @@ int main()
     decorateMe("ALib");
     decorateMe("ALib", 2);
     decorateMe("ALib", 3, "+");
+    decorateMe("ALib", 3, "+", true);
+    decorateMe("ALib", 3, "+", false);
 	
 	std::cout<<(consoleWidth());
     std::cout<<std::endl;

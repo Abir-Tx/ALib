@@ -29,15 +29,16 @@ Maintainer:         Mushfiqur Rahman Abir
 // Including platform specific files
 #if defined(LINUX) || defined(MAC)
 #include <unistd.h>
-#include <sys/ioctl.h>
+#include <sys/ioctl.h> /* For getting terminal height and width. See consoleWidth() & consoleHeight() */
 #elif defined(WINDOWS)
 #include <windows.h>
 #endif
 
 // Including platform independent files
-#include "rang.hpp"
+#include "rang.hpp" /* A third party library for console text styling and coloring */
 #include <iostream>
 #include <vector>
+#include <iomanip>
 
 // Functions
 namespace alib
@@ -144,6 +145,7 @@ namespace alib
 #endif
     }
 
+    // Return the console's width and height respectively
     unsigned int consoleWidth()
     {
 #if defined(LINUX) || defined(MAC)
@@ -161,7 +163,7 @@ namespace alib
 
     unsigned int consoleHeight()
 
-        {
+    {
 #if defined(LINUX) || defined(MAC)
         winsize conSize;
         ioctl(STDOUT_FILENO, TIOCGWINSZ, &conSize);
@@ -178,6 +180,53 @@ namespace alib
 #define terminalWidth consoleWidth
 #define terminalHeight consoleHeight
 
+    // Another overload of decorateMe function with print to center ability
+    void decorateMe(std::string textToDecor, unsigned short int lineBreaksNumber, std::string decorator, bool isCenter)
+    {
+        if (isCenter)
+        {
+            using namespace rang;
+
+            int charSize = textToDecor.capacity();
+
+            // Getting the terminal center value & starting point of the decorations
+            unsigned int termCenter = consoleWidth() / 2;
+            int startingPoint = termCenter - (charSize / 2);
+            int textToDecor_StartingPoint = startingPoint + ((charSize * 2) - charSize);
+
+            std::cout << std::endl;
+            std::cout << fg::red;
+            std::cout << std::setw(startingPoint) << std::setfill(' ');
+            for (int i = 0; i < (charSize * 2); i++)
+            {
+                std::cout << decorator;
+            }
+            std::cout << fg::reset;
+            for (int i = 1; i <= lineBreaksNumber; i++)
+            {
+                std::cout << std::endl;
+            }
+            std::cout << fg::blue << style::bold << std::setw(textToDecor_StartingPoint) << std::setfill(' ') << textToDecor << style::reset << fg::reset;
+
+            for (int i = 1; i <= lineBreaksNumber; i++)
+            {
+                std::cout << std::endl;
+            }
+            std::cout << fg::red;
+            std::cout << std::setw(startingPoint) << std::setfill(' ');
+            for (int i = 0; i < (charSize * 2); i++)
+            {
+                std::cout << decorator;
+            }
+            std::cout << fg::reset;
+            std::cout << std::endl;
+            std::cout << std::endl;
+        }
+        else
+        {
+            decorateMe(textToDecor, lineBreaksNumber, decorator);
+        }
+    }
 
 
 } // end of namespace alib
