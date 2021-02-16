@@ -143,7 +143,16 @@ namespace alib
         #endif
     }
 
-    
+    void setConsoleTitle(std::string consoleTitle)
+    {
+
+        #if defined(LINUX) || defined(MAC)
+        system(+consoleTitle.c_str());
+        #elif defined(WINDOWS)
+        std::cout<<"Hello windows";
+        #endif
+    }
+    #define consoleTitle setConsoleTitle
 } // end of namespace alib
 
 // Undefining different platforms

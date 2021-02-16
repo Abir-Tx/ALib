@@ -11,4 +11,7 @@ int main()
     decorateMe("ALib");
     decorateMe("ALib", 2);
     decorateMe("ALib", 3, "+");
+
+    setConsoleTitle("ALib");
+    consoleTitle("Alib");
 }
