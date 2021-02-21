@@ -185,6 +185,63 @@ void decorateMe(std::string textToDecor, unsigned short int lineBreaksNumber,
   }
 }
 
+// A method for countdown from a given number to 0
+void countdown(unsigned int starting_number) {
+  for (unsigned int i = starting_number; i <= starting_number; i--) {
+    std::cout << rang::style::bold << i << rang::style::reset << std::endl;
+  }
+}
+
+void countdown(unsigned int starting_number, bool transition) {
+  if (transition) {
+    for (unsigned int i = starting_number; i <= starting_number; i--) {
+      std::cout << rang::style::bold << i << rang::style::reset << std::endl;
+      sleep(1);
+    }
+  } else {
+    countdown(starting_number);
+  }
+}
+void countdown(unsigned int starting_number, unsigned int ending_number,
+               bool transition) {
+  if (transition) {
+    for (unsigned int i = starting_number; i >= ending_number; i--) {
+      std::cout << rang::style::bold << i << rang::style::reset << std::endl;
+      sleep(1);
+    }
+  } else {
+    countdown(starting_number);
+  }
+}
+
+void countdown(unsigned int starting_number, unsigned int ending_number,
+               bool transition, bool isInline) {
+  if (transition) {
+    if (isInline) {
+      /* For an unknown reason the transition/sleep is not working as expected.
+      Instead of showing one by one it is showing all the numbers at once */
+
+      for (unsigned int i = starting_number; i >= ending_number; i--) {
+        std::cout << rang::style::bold << i << rang::style::reset << " ";
+        // std::cout << " ";
+        sleep(1);
+      }
+    } else {
+      for (unsigned int i = starting_number; i >= ending_number; i--) {
+        std::cout << rang::style::bold << i << rang::style::reset << std::endl;
+        sleep(1);
+      }
+    }
+  } else {
+    if (isInline) {
+      for (unsigned int i = starting_number; i >= ending_number; i--) {
+        std::cout << rang::style::bold << i << rang::style::reset << " ";
+      }
+    } else {
+      countdown(starting_number);
+    }
+  }
+}
 }  // end of namespace alib
 
 // Undefining different platforms
