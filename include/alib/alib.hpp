@@ -11,6 +11,7 @@ The project is maintained by Mushfiqur Rahman Abir aka Abir-Tx.
 
 Current Version:    v1.0
 Maintainer:         Mushfiqur Rahman Abir
+Developer Profile   https://www.github.com/Abir-Tx
 */
 
 #if !defined(ALIB_DOT_HPP)
