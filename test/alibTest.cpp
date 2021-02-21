@@ -20,7 +20,9 @@ int main() {
     std::cout << (terminalWidth());
     std::cout << std::endl;
 
-    std::cout << (consoleHeight()); */
+    std::cout << (consoleHeight());
 
   countdown(3, 1, true, false);
+  */
+  showLoadingScreen();
 }

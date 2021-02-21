@@ -242,6 +242,15 @@ void countdown(unsigned int starting_number, unsigned int ending_number,
     }
   }
 }
+
+// Shows a loading screen (fake) to give user feedback for something working in
+// bg
+void showLoadingScreen() {
+  for (unsigned int i = 0; i < 3; i++) {
+    sleep(1);
+    std::cout << ". " << std::flush;
+  }
+}
 }  // end of namespace alib
 
 // Undefining different platforms
