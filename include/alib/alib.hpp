@@ -251,6 +251,31 @@ void showLoadingScreen() {
     std::cout << ". " << std::flush;
   }
 }
+
+void showBoxAnimation(){
+  char bar = '|';
+  char horBar = '_';
+
+  for (int i = 0; i < 10; i++)
+  {
+    std::cout<<horBar;
+  }
+  for (int i = 0; i < 5; i++)
+  {
+    std::cout<<std::endl;
+    std::cout<<bar;
+
+    std::cout<<std::setw(10)<<std::setfill(' ')<<bar;
+
+  }
+  std::cout << std::resetiosflags<<std::endl;
+    for (int i = 0; i < 10; i++)
+  {
+    std::cout<<horBar;
+  }
+
+
+}
 }  // end of namespace alib
 
 // Undefining different platforms

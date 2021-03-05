@@ -23,6 +23,8 @@ int main() {
     std::cout << (consoleHeight());
 
   countdown(3, 1, true, false);
-  */
   showLoadingScreen();
+  */
+
+  showBoxAnimation();
 }
