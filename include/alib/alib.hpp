@@ -252,30 +252,27 @@ void showLoadingScreen() {
   }
 }
 
-void showBoxAnimation(){
+void showBoxAnimation() {
   char bar = '|';
   char horBar = '_';
+  unsigned short int pos = 5;
 
-  for (int i = 0; i < 10; i++)
-  {
-    std::cout<<horBar;
+  std::cout << std::setw(pos) << std::setfill(' ');
+  for (int i = 0; i < 10; i++) { std::cout << horBar; }
+
+  for (int i = 0; i < 5; i++) {
+    std::cout << std::setw(pos) << std::setfill(' ');
+    std::cout << std::endl;
+    std::cout << bar;
+
+    std::cout << std::setw(10) << std::setfill(' ') << bar;
   }
-  for (int i = 0; i < 5; i++)
-  {
-    std::cout<<std::endl;
-    std::cout<<bar;
+  std::cout << std::resetiosflags << std::endl;
 
-    std::cout<<std::setw(10)<<std::setfill(' ')<<bar;
-
-  }
-  std::cout << std::resetiosflags<<std::endl;
-    for (int i = 0; i < 10; i++)
-  {
-    std::cout<<horBar;
-  }
-
-
+  std::cout << std::setw(pos) << std::setfill(' ');
+  for (int i = 0; i < 10; i++) { std::cout << horBar; }
 }
+
 }  // end of namespace alib
 
 // Undefining different platforms
