@@ -1,3 +1,5 @@
+[![Windows & Linux Build](https://github.com/Abir-Tx/ALib/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/Abir-Tx/ALib/actions/workflows/c-cpp.yml)
+
 # ALib
 Modern cross platform C++ header only library which features many useful utility functions which can be used in your personal project.
 ALib provides many usefull functions which are not available in the **built in** or **standard** C++ library like decorating a text.
