@@ -1,9 +1,10 @@
 /* Test cpp file for alib.hpp */
 
-#include "alib.hpp"
 #include "rang.hpp"
+#include "alib.hpp"
 
 using namespace alib;
+
 using std::cout;
 using std::endl;
 int main() {
@@ -23,6 +24,10 @@ int main() {
     std::cout << (consoleHeight());
 
   countdown(3, 1, true, false);
-  */
   showLoadingScreen();
+  */
+
+  countdown(1);
+  countdown(3,true);
+  countdown(5,1,true,true);
 }

@@ -34,6 +34,7 @@ Developer Profile   https://www.github.com/Abir-Tx
 #include <unistd.h>
 #elif defined(WINDOWS)
 #include <windows.h>
+#include <unistd.h>
 #endif
 
 // Including platform independent files
