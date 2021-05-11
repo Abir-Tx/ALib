@@ -33,8 +33,9 @@ Developer Profile   https://www.github.com/Abir-Tx
 #include <sys/ioctl.h> /* For getting terminal height and width. See consoleWidth() & consoleHeight() */
 #include <unistd.h>
 #elif defined(WINDOWS)
-#include <windows.h>
 #include <unistd.h>
+#include <windows.h>
+
 #endif
 
 // Including platform independent files
@@ -246,12 +247,27 @@ void countdown(unsigned int starting_number, unsigned int ending_number,
 
 // Shows a loading screen (fake) to give user feedback for something working in
 // bg
-void showLoadingScreen() {
-  for (unsigned int i = 0; i < 3; i++) {
+void showLoadingScreen(unsigned short int count = 3) {
+  for (unsigned int i = 0; i < count; i++) {
     sleep(1);
     std::cout << ". " << std::flush;
   }
 }
+
+/* Overloaded function of showloadingScreen with added paramater. if no
+ * parameters are paased then the default values will be used */
+void showLoadingScreen(std::string loadingText, unsigned short int count = 3,
+                       bool enableBothSide = false) {
+  if (!enableBothSide) {
+  RightSideLoading:
+    std::cout << rang::style::bold << loadingText << " " << rang::style::reset;
+    showLoadingScreen(count);
+  } else {
+    showLoadingScreen(count); /* For left side loading */
+    goto RightSideLoading;
+  }
+}
+
 }  // end of namespace alib
 
 // Undefining different platforms
