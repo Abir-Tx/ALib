@@ -23,6 +23,8 @@ jobs:
     - name: Config
       run: make config
     - name: Build
-      run: make testbuild
+      run: make testBuild
     - name: Run
       run: make testrun
+    - name: Clean
+      run: make clean
