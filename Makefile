@@ -34,3 +34,7 @@ testRun:
 config:
 	mkdir bin
 	mkdir src
+
+.PHONY: clean
+clean:
+	rm -r bin src
