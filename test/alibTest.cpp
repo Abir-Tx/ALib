@@ -31,7 +31,4 @@ int main() {
 
   showLoadingScreen("Loading", 4, true);
   std::cout << std::endl;
-
-  horizontalLine();
-  horizontalLine(2, "red");
 }
