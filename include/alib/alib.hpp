@@ -268,6 +268,45 @@ void showLoadingScreen(std::string loadingText, unsigned short int count = 3,
   }
 }
 
+// Prints a full screen horizontal line dynamically on runtime depending on the
+// terminal size with optional colors
+void horizontalLine(unsigned short int count = 1,
+                    std::string barColor = "white") {
+  using namespace rang;
+
+// Macro for setting the bar color
+#define SETBARCOLOR std::cout << fg::
+
+  if (barColor == "white") {
+    SETBARCOLOR reset;
+  } else if (barColor == "red")
+    SETBARCOLOR red;
+  else if (barColor == "blue")
+    SETBARCOLOR blue;
+  else if (barColor == "green")
+    SETBARCOLOR green;
+  else
+    std::cerr << barColor
+              << "Bar Color is not supported. Supported "
+                 "colors are -> white, red, blue, green";
+
+  for (unsigned short int i = 0; i < count; i++) {
+    for (int i = 0; i < consoleWidth(); i++) { std::cout << "_"; }
+  }
+
+  // Reset the standart output stream to avoid showing colors for other streams
+  SETBARCOLOR reset;
+
+#undef SETBARCOLOR
+}
+
+/* void vertical(){
+  for (int i = 0 ; i < consoleHeight(); i++){
+    std::cout<<"|" << std::setw(consoleWidth()-1) << std::setfill(' ')<< "|" <<
+std::endl;
+  }
+} */
+
 }  // end of namespace alib
 
 // Undefining different platforms

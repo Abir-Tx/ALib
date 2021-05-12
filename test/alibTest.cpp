@@ -24,10 +24,12 @@ int main() {
     std::cout << (consoleHeight());
 
   countdown(3, 1, true, false);
-  */
  showLoadingScreen("Starting");
  std::cout<<std::endl;
 
-  showLoadingScreen("Loading",4,false);
+  showLoadingScreen("Loading",4,true);
+  */
+ horizontalLine();
+ horizontalLine(2, "red");
 
 }
