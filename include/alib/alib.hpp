@@ -277,6 +277,8 @@ void horizontalLine(unsigned short int count = 1,
 // Macro for setting the bar color
 #define SETBARCOLOR std::cout << fg::
 
+  bool runBar = true;
+
   if (barColor == "white") {
     SETBARCOLOR reset;
   } else if (barColor == "red")
@@ -285,13 +287,21 @@ void horizontalLine(unsigned short int count = 1,
     SETBARCOLOR blue;
   else if (barColor == "green")
     SETBARCOLOR green;
-  else
+  else {
+    runBar = false;
     std::cerr << barColor
-              << "Bar Color is not supported. Supported "
+              << " Bar Color is not supported. Supported "
                  "colors are -> white, red, blue, green";
+  }
 
-  for (unsigned short int i = 0; i < count; i++) {
-    for (int i = 0; i < consoleWidth(); i++) { std::cout << "_"; }
+  if (runBar) {
+    for (unsigned short int i = 0; i < count; i++) {
+      for (int i = 0; i < consoleWidth(); i++) { std::cout << "_"; }
+    }
+  } else {
+    std::cerr << barColor
+              << " Bar Color is not supported. Supported "
+                 "colors are -> white, red, blue, green";
   }
 
   // Reset the standart output stream to avoid showing colors for other streams

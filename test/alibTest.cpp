@@ -23,7 +23,7 @@ int main() {
   std::cout << (terminalWidth());
   std::cout << std::endl;
 
-  std::cout << (consoleHeight());
+
 
   countdown(3, 1, true, false);
   showLoadingScreen("Starting");
@@ -31,4 +31,6 @@ int main() {
 
   showLoadingScreen("Loading", 4, true);
   std::cout << std::endl;
+
+  horizontalLine(2, "purple");
 }
