@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# Arch Packaging
+*.zst
+src/*

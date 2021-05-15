@@ -46,3 +46,10 @@ install:
 uninstall:
 	sudo rm /usr/include/alib.hpp /usr/include/rang.hpp
 	echo "Removed Alib from your sytem"
+
+pkgclean:
+	sudo rm -r pkg ALib *pkg.tar.zst
+
+pkgbuild:
+	makepkg --printsrcinfo > .SRCINFO
+	makepkg
