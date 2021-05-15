@@ -38,3 +38,11 @@ config:
 .PHONY: clean
 clean:
 	rm -r bin src
+
+install:
+	sudo cp include/alib/alib.hpp lib/rang/rang.hpp /usr/include
+	echo Installed Alib to your system
+
+uninstall:
+	sudo rm /usr/include/alib.hpp /usr/include/rang.hpp
+	echo "Removed Alib from your sytem"
