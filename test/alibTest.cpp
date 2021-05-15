@@ -1,7 +1,7 @@
 /* Test cpp file for alib.hpp */
 
-#include "alib.hpp"
 #include "rang.hpp"
+#include "alib.hpp"
 
 using namespace alib;
 
