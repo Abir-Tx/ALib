@@ -1,9 +1,7 @@
 /* Test cpp file for alib.hpp */
 
-#include "rang.hpp"
 #include "alib.hpp"
-
-
+#include "rang.hpp"
 
 using namespace alib;
 
@@ -18,12 +16,10 @@ int main() {
   decorateMe("ALib", 3, "+", true);
   decorateMe("ALib", 3, "+", false);
 
-  std::cout << (consoleWidth());
+  // std::cout << (consoleWidth());
   std::cout << std::endl;
-  std::cout << (terminalWidth());
+  // std::cout << (terminalWidth());
   std::cout << std::endl;
-
-
 
   countdown(3, 1, true, false);
   showLoadingScreen("Starting");
@@ -32,5 +28,5 @@ int main() {
   showLoadingScreen("Loading", 4, true);
   std::cout << std::endl;
 
-  horizontalLine(2, "purple");
+  // horizontalLine(2, "purple");
 }
