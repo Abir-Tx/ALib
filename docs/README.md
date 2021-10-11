@@ -1,4 +1,4 @@
-[![Windows & Linux Build](https://github.com/Abir-Tx/ALib/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/Abir-Tx/ALib/actions/workflows/c-cpp.yml)
+[![Windows & Linux Build](https://github.com/Abir-Tx/ALib/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/Abir-Tx/ALib/actions/workflows/c-cpp.yml) [![CodeFactor](https://www.codefactor.io/repository/github/abir-tx/alib/badge)](https://www.codefactor.io/repository/github/abir-tx/alib)
 
 # ALib
 Modern cross platform C++ header only library which features many useful utility functions which can be used in your personal project.
