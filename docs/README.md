@@ -4,7 +4,7 @@
 Modern cross platform C++ header only library which features many useful utility functions which can be used in your personal project.
 ALib provides many usefull functions which are not available in the **built in** or **standard** C++ library like decorating a text.
 
-The motivation of this project is to get rid of writing most/frequently needed functions/codes again & again for different project. Which is tedious & not the prommatic way of doing things. Also this library packs some decorating functions.
+The motivation of this project is to get rid of writing most/frequently needed functions/codes again & again for different project. Which is tedious & not the progrmmatic way of doing things. Also this library packs some decorating functions.
 
 # Features
 
