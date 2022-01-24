@@ -17,3 +17,6 @@ Contributions are always welcomed to this project. Contributing to this project 
 
 You can learn more about contributin to this project by reading [this](CONTRIBUTING.md) documentation
 
+## Submit Issues
+If you face any issue or want to submit new ideas to be implemented in **ALib** please open a new issue by clicking [here](https://github.com/Abir-Tx/ALib/issues/new)
+
