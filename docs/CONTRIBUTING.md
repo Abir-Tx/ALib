@@ -36,6 +36,15 @@ There are a few rules and code conventions to follow to contribute for this proj
 
 If you are new to contributing to github project you can [read this](https://gist.github.com/MarcDiethelm/7303312#file-contributing-md) for further understanding. Also you can contact me directly using my email address - abirtx@yandex.com
 
+
+# Building The Developement Environment
+You can use the `alibTest.cpp` file present in the **test** directory to test out your written functions. Follow these steps to easily run the test quickly:
+
+- In the terminal run `make config`. It will create necessary folders for the testing. ***This is required to run only once***.
+- Now just run `make` and it will compile and run the test file automatically
+
+> You need **Make** program installed on your machine
+
 # Code Conventions
 
 It is very important to keep all the source code the same for all so that it is easier to read & is also convinent. So to achieve this the **ALib** project uses a ```.clang-format``` file which helps to format the code. 
