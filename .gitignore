@@ -34,3 +34,4 @@
 # Arch Packaging
 *.zst
 src/*
+amalgamate.hpp
