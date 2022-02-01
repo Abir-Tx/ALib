@@ -1,6 +1,6 @@
 # Maintainer: Abir-Tx <abirtx@yandex.com>
 pkgname=alib
-pkgver=0.9.0
+pkgver=1.0.0
 pkgrel=1
 pkgdesc="Modern cross platform C++ header only library which features many useful utility functions which can be used in your personal project. ALib provides many usefull functions which are not available in the built in or standard C++ library like decorating a text"
 arch=(any)
