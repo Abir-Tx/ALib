@@ -12,6 +12,16 @@ The motivation of this project is to get rid of writing most/frequently needed f
 - Extremely extensible - The **ALib** is very modular as it is function based. So you can easily change or add features to a function as you need by modifying the source code.
 - Supports colored decorations - ALib uses a 3rd Party library called **rang** to produce colored text output.
 
+# Provided Functions:
+ ```- decorateMe
+ - clrscr
+ - consoleWidth/terminalWidth
+ - consoleHeight/terminalHeight
+ - countdown
+ - showLoadingScreen
+ - horizontalLine
+```
+
 # Contributing 
 Contributions are always welcomed to this project. Contributing to this project is very easy and needed too. Any beginner level C++ programmer can contribute to this project. Any bug report or bug fix or addition of new features to this library will be very helpful.
 
