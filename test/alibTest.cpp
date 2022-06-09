@@ -20,13 +20,13 @@ using std::endl;
 int main() {
   std::cout << "Alib\n";
   clrscr();
+
+#if defined LINUX || MAC
   decorateMe("ALib");
   decorateMe("ALib", 2);
   decorateMe("ALib", 3, "+");
   decorateMe("ALib", 3, "+", true);
   decorateMe("ALib", 3, "+", false);
-
-#if defined LINUX || MAC
   // std::cout << (consoleWidth());
   std::cout << std::endl;
   // std::cout << (terminalWidth());
