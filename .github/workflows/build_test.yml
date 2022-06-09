@@ -23,14 +23,6 @@ jobs:
       run: make config
     - name: Build
       run: make testBuild
-
-  run:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-    needs: build
-    steps:
     - name: Run
       run: make testRun
     - name: Clean
