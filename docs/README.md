@@ -12,6 +12,7 @@ The motivation of this project is to get rid of writing most/frequently needed f
 - Extremely extensible - The **ALib** is very modular as it is function based. So you can easily change or add features to a function as you need by modifying the source code.
 - Supports colored decorations - ALib uses a 3rd Party library called **rang** to produce colored text output.
 
+
 # Provided Functions:
  ```- decorateMe
  - clrscr
@@ -22,6 +23,16 @@ The motivation of this project is to get rid of writing most/frequently needed f
  - horizontalLine
 ```
 
+# Installation
+
+## Linux
+Download the `alib.hpp` from the **[Releases](https://github.com/Abir-Tx/ALib/releases)** section & copy it to the `/usr/include` folder & that's it
+### Arch Linux
+Arch users can install the library from [AUR](https://aur.archlinux.org/packages/alib) easily using `pacman`
+```bash
+pacman -S alib
+```
+
 # Contributing 
 Contributions are always welcomed to this project. Contributing to this project is very easy and needed too. Any beginner level C++ programmer can contribute to this project. Any bug report or bug fix or addition of new features to this library will be very helpful.
 
@@ -29,4 +40,5 @@ You can learn more about contributin to this project by reading [this](CONTRIBUT
 
 ## Submit Issues
 If you face any issue or want to submit new ideas to be implemented in **ALib** please open a new issue by clicking [here](https://github.com/Abir-Tx/ALib/issues/new)
+
 
