@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: Run Tests CI
 
 on:
   push:
@@ -11,8 +11,7 @@ on:
     - dev
 
 jobs:
-  build:
-
+  build_run:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
