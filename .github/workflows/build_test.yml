@@ -11,7 +11,7 @@ on:
     - dev
 
 jobs:
-  build:
+  build_run:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
