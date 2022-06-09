@@ -20,6 +20,11 @@ using std::endl;
 int main() {
   std::cout << "Alib\n";
   clrscr();
+  showLoadingScreen("Starting");
+  std::cout << std::endl;
+
+  showLoadingScreen("Loading", 4, true);
+  std::cout << std::endl;
 
 #if defined LINUX || MAC
   decorateMe("ALib");
