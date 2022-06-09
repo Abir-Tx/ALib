@@ -1,6 +1,9 @@
-[![Windows & Linux Build](https://github.com/Abir-Tx/ALib/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/Abir-Tx/ALib/actions/workflows/c-cpp.yml) [![CodeFactor](https://www.codefactor.io/repository/github/abir-tx/alib/badge)](https://www.codefactor.io/repository/github/abir-tx/alib)
+<h1 align="center">ALib</h1>
 
-# ALib
+
+[![Windows & Linux Build](https://github.com/Abir-Tx/ALib/actions/workflows/build_test.yml/badge.svg)](https://github.com/Abir-Tx/ALib/actions/workflows/build_test.yml) [![CodeFactor](https://www.codefactor.io/repository/github/abir-tx/alib/badge)](https://www.codefactor.io/repository/github/abir-tx/alib) [![CodeQL](https://github.com/Abir-Tx/ALib/actions/workflows/codeql.yml/badge.svg)](https://github.com/Abir-Tx/ALib/actions/workflows/codeql.yml)
+
+
 Modern cross platform C++ header only library which features many useful utility functions which can be used in your personal project.
 ALib provides many usefull functions which are not available in the **built in** or **standard** C++ library like decorating a text.
 
