@@ -26,6 +26,12 @@ int main() {
   showLoadingScreen("Loading", 4, true);
   std::cout << std::endl;
 
+  decorateMe("ALib");
+  decorateMe("ALib", 2);
+  decorateMe("ALib", 3, "+");
+  decorateMe("ALib", 3, "+", true);
+  decorateMe("ALib", 3, "+", false);
+
 #if defined LINUX || MAC
   decorateMe("ALib");
   decorateMe("ALib", 2);
