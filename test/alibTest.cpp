@@ -3,6 +3,16 @@
 #include "rang.hpp"
 #include "alib.hpp"
 
+#if defined(WIN32) || defined(_WIN32) || defined(_WIN64)
+#define WINDOWS
+#elif defined(__unix__) || defined(__unix) || defined(__linux__)
+#define LINUX
+#elif defined(__APPLE__) || defined(__MACH__)
+#define MAC
+#else
+#error Unknown
+#endif
+
 using namespace alib;
 
 using std::cout;
@@ -16,6 +26,7 @@ int main() {
   decorateMe("ALib", 3, "+", true);
   decorateMe("ALib", 3, "+", false);
 
+#if defined LINUX || MAC
   // std::cout << (consoleWidth());
   std::cout << std::endl;
   // std::cout << (terminalWidth());
@@ -29,4 +40,5 @@ int main() {
   std::cout << std::endl;
 
   // horizontalLine(2, "purple");
+  #endif
 }
