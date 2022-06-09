@@ -29,8 +29,8 @@ int main() {
   decorateMe("ALib");
   decorateMe("ALib", 2);
   decorateMe("ALib", 3, "+");
-  decorateMe("ALib", 3, "+", true);
-  decorateMe("ALib", 3, "+", false);
+
+  countdown(3, 1, true, false);
 
 #if defined LINUX || MAC
   decorateMe("ALib");
