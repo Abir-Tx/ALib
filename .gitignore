@@ -30,6 +30,13 @@
 *.exe
 *.out
 *.app
+
+#VS CODE CONF
 .vscode/configurationCache.log
 .vscode/dryrun.log
 .vscode/targets.log
+
+# Arch Packaging
+*.zst
+src/*
+amalgamate.hpp

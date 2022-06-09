@@ -18,6 +18,22 @@
             "configurationProvider": "ms-vscode.makefile-tools"
         },
         {
+            "name": "Win32-alt",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:\\mingw\\bin\\gcc.exe",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "windows-gcc-x86"
+        },
+        {
             "name": "linux",
             "includePath": [
                 "${workspaceFolder}/**",
