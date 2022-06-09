@@ -41,4 +41,7 @@ You can learn more about contributin to this project by reading [this](CONTRIBUT
 ## Submit Issues
 If you face any issue or want to submit new ideas to be implemented in **ALib** please open a new issue by clicking [here](https://github.com/Abir-Tx/ALib/issues/new)
 
+# Note For Developers
+It is recommended to use the `dev` branch while doing developement works and then make a pull request
+
 
