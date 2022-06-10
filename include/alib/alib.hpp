@@ -310,12 +310,35 @@ void horizontalLine(unsigned short int count = 1,
 #undef SETBARCOLOR
 }
 
-/* void vertical(){
-  for (int i = 0 ; i < consoleHeight(); i++){
-    std::cout<<"|" << std::setw(consoleWidth()-1) << std::setfill(' ')<< "|" <<
-std::endl;
+/*
+The function prints vertical line to the left side of the console. By default
+the minimum amount of lines (|) are 7 and this can be increased by passing the
+count parameter. If count is 1 then only 7 lines will be printed if count is 2
+then (7*2)14 lines will be printed & so on.
+
+The function also accepts a string param which is responsible to be printed on
+the mid point of all the lines. This is done by dividing the totalLine by 2
+which gives the middle number of all the printed lines. If the totalLine equals
+to an even number then we add one more line to make it odd & display the text in
+perfect middle
+*/
+void verticalLine(unsigned short int count = 1,
+                  std::string middlePointDisplayText = "") {
+#define DEFAULT_MIN_LINES 7
+  unsigned short int totalLine = DEFAULT_MIN_LINES * count;
+  USHORT midPoint = totalLine / 2;
+
+  
+  if (totalLine % 2 == 0) totalLine += 1;
+  for (int i = 1; i < totalLine; i++) {
+    std::cout << "|" << std::endl;
+    if (i == midPoint) {
+      std::cout << "| " << middlePointDisplayText << std::endl;
+      continue;
+    }
   }
-} */
+#undef DEFAULT_MIN_LINES
+}
 
 }  // end of namespace alib
 

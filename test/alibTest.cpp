@@ -54,6 +54,8 @@ int main() {
   std::cout << std::endl;
 
   horizontalLine(1,"red");
+  // verticalLine();
+  verticalLine(2,"Made by Abir-Tx");
 
 // LINUX & MAC ONLY TESTS
 #if defined LINUX || MAC
