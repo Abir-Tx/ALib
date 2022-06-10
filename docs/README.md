@@ -24,6 +24,7 @@ The motivation of this project is to get rid of writing most/frequently needed f
  - countdown
  - showLoadingScreen
  - horizontalLine
+ - verticalLine
 ```
 
 # Installation
