@@ -326,9 +326,9 @@ void verticalLine(unsigned short int count = 1,
                   std::string middlePointDisplayText = "") {
 #define DEFAULT_MIN_LINES 7
   unsigned short int totalLine = DEFAULT_MIN_LINES * count;
-  USHORT midPoint = totalLine / 2;
+  unsigned short int midPoint = totalLine / 2;
 
-  
+
   if (totalLine % 2 == 0) totalLine += 1;
   for (int i = 1; i < totalLine; i++) {
     std::cout << "|" << std::endl;
