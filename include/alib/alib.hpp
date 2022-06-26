@@ -270,8 +270,18 @@ void showLoadingScreen(std::string loadingText, unsigned short int count = 3,
 
 // Prints a full screen horizontal line dynamically on runtime depending on the
 // terminal size with optional colors
+
+// The Colors enum class used to specify colors while passing arguments to the function
+// This is also usefull to handle errors. 
+enum class Colors{
+  white=1,
+  red,
+  blue,
+  green
+};
+
 void horizontalLine(unsigned short int count = 1,
-                    std::string barColor = "white") {
+                    Colors barColor = Colors::white) {
   using namespace rang;
 
 // Macro for setting the bar color
@@ -279,17 +289,19 @@ void horizontalLine(unsigned short int count = 1,
 
   bool runBar = true;
 
-  if (barColor == "white") {
+  if (barColor == Colors::white) {
     SETBARCOLOR reset;
-  } else if (barColor == "red")
+  } else if (barColor == Colors::red)
     SETBARCOLOR red;
-  else if (barColor == "blue")
+  else if (barColor == Colors::blue)
     SETBARCOLOR blue;
-  else if (barColor == "green")
+  else if (barColor == Colors::green)
     SETBARCOLOR green;
   else {
+    /* TODO: Remove this error message as it is not needed or will not be executed anymore
+    because of usage of the enum class */
     runBar = false;
-    std::cerr << barColor
+    std::cerr << "The specified "
               << " Bar Color is not supported. Supported "
                  "colors are -> white, red, blue, green";
   }
@@ -299,7 +311,7 @@ void horizontalLine(unsigned short int count = 1,
       for (int i = 0; i < consoleWidth(); i++) { std::cout << "_"; }
     }
   } else {
-    std::cerr << barColor
+    std::cerr << "The specified "
               << " Bar Color is not supported. Supported "
                  "colors are -> white, red, blue, green";
   }
