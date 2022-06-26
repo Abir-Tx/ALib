@@ -1,7 +1,7 @@
 <h1 align="center">ALib</h1>
 
 
-[![Windows & Linux Build](https://github.com/Abir-Tx/ALib/actions/workflows/build_test.yml/badge.svg)](https://github.com/Abir-Tx/ALib/actions/workflows/build_test.yml) [![CodeFactor](https://www.codefactor.io/repository/github/abir-tx/alib/badge)](https://www.codefactor.io/repository/github/abir-tx/alib) [![CodeQL](https://github.com/Abir-Tx/ALib/actions/workflows/codeql.yml/badge.svg)](https://github.com/Abir-Tx/ALib/actions/workflows/codeql.yml)
+[![Windows & Linux Build](https://github.com/Abir-Tx/ALib/actions/workflows/build_test.yml/badge.svg)](https://github.com/Abir-Tx/ALib/actions/workflows/build_test.yml) [![CodeFactor](https://www.codefactor.io/repository/github/abir-tx/alib/badge)](https://www.codefactor.io/repository/github/abir-tx/alib) [![CodeQL](https://github.com/Abir-Tx/ALib/actions/workflows/codeql.yml/badge.svg)](https://github.com/Abir-Tx/ALib/actions/workflows/codeql.yml) ![AUR version](https://img.shields.io/aur/version/alib?logo=archlinux)
 
 
 Modern cross platform C++ header only library which features many useful utility functions which can be used in your personal project.
