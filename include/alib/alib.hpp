@@ -274,14 +274,14 @@ void showLoadingScreen(std::string loadingText, unsigned short int count = 3,
 // The Colors enum class used to specify colors while passing arguments to the function
 // This is also usefull to handle errors. 
 enum class Colors{
-  white=1,
-  red,
-  blue,
-  green
+  White=1,
+  Red,
+  Blue,
+  Green
 };
 
 void horizontalLine(unsigned short int count = 1,
-                    Colors barColor = Colors::white) {
+                    Colors barColor = Colors::White) {
   using namespace rang;
 
 // Macro for setting the bar color
@@ -289,13 +289,13 @@ void horizontalLine(unsigned short int count = 1,
 
   bool runBar = true;
 
-  if (barColor == Colors::white) {
+  if (barColor == Colors::White) {
     SETBARCOLOR reset;
-  } else if (barColor == Colors::red)
+  } else if (barColor == Colors::Red)
     SETBARCOLOR red;
-  else if (barColor == Colors::blue)
+  else if (barColor == Colors::Blue)
     SETBARCOLOR blue;
-  else if (barColor == Colors::green)
+  else if (barColor == Colors::Green)
     SETBARCOLOR green;
   else {
     /* TODO: Remove this error message as it is not needed or will not be executed anymore
