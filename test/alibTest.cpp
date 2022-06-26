@@ -67,8 +67,8 @@ int main() {
   decorateMe("ALib", 3, "+", true);
   decorateMe("ALib", 3, "+", false);
   std::cout<<std::endl;
-  horizontalLine(2, "purple");
+  // horizontalLine(2, "purple");
   std::cout<<std::endl;
-  horizontalLine(2,"red");
+  horizontalLine(2,Colors::Red);
   #endif
 }
