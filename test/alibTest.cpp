@@ -53,7 +53,9 @@ int main() {
 
   std::cout << std::endl;
 
-  horizontalLine(1,"red");
+  horizontalLine(1, Colors::red);
+  horizontalLine(1, alib::Colors::blue);
+  horizontalLine(1);
 
 // LINUX & MAC ONLY TESTS
 #if defined LINUX || MAC
