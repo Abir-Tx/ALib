@@ -53,9 +53,13 @@ int main() {
 
   std::cout << std::endl;
 
-  horizontalLine(1,"red");
+
   // verticalLine();
   verticalLine(2,"Made by Abir-Tx");
+  horizontalLine(1, Colors::Red);
+  horizontalLine(1, alib::Colors::Blue);
+  horizontalLine(1);
+  horizontalLine(1,Colors::Green);
 
 // LINUX & MAC ONLY TESTS
 #if defined LINUX || MAC
@@ -66,8 +70,7 @@ int main() {
   decorateMe("ALib", 3, "+", true);
   decorateMe("ALib", 3, "+", false);
   std::cout<<std::endl;
-  horizontalLine(2, "purple");
   std::cout<<std::endl;
-  horizontalLine(2,"red");
+  horizontalLine(2,Colors::Red);
   #endif
 }
