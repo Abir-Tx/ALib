@@ -352,6 +352,31 @@ void verticalLine(unsigned short int count = 1,
 #undef DEFAULT_MIN_LINES
 }
 
+void verticalLine(unsigned short int count, std::string middlePointDisplayText, bool isCenter){
+#define DEFAULT_MIN_LINES 7
+  unsigned short int totalLine = DEFAULT_MIN_LINES * count;
+  unsigned short int midPoint = totalLine / 2;
+
+
+  int charSize = middlePointDisplayText.capacity();
+
+    // Getting the terminal center value & starting point of the decorations
+    unsigned int termCenter = consoleWidth() / 2;
+    int startingPoint = termCenter - (charSize / 2);
+    int textToDecor_StartingPoint = startingPoint + ((charSize * 2) - charSize);
+
+  if (totalLine % 2 == 0) totalLine += 1;
+  for (int i = 1; i < totalLine; i++) {
+    std::cout << "|" << std::endl;
+    if (i == midPoint) {
+      std::cout << "| " <<std::setw(textToDecor_StartingPoint)
+              << std::setfill(' ') <<middlePointDisplayText << std::endl;
+      continue;
+    }
+  }
+#undef DEFAULT_MIN_LINES
+}
+
 }  // end of namespace alib
 
 // Undefining different platforms

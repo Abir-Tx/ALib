@@ -44,22 +44,24 @@ int main() {
 
   std::cout << std::endl;
 
-  countdown(3, 1, true, false);
-  showLoadingScreen("Starting");
+  // countdown(3, 1, true, false);
+  // showLoadingScreen("Starting");
 
-  std::cout << std::endl;
+  // std::cout << std::endl;
 
-  showLoadingScreen("Loading", 4, true);
+  // showLoadingScreen("Loading", 4, true);
 
   std::cout << std::endl;
 
 
   // verticalLine();
-  verticalLine(2,"Made by Abir-Tx");
+  verticalLine(1,"Made by Abir-Tx");
   horizontalLine(1, Colors::Red);
   horizontalLine(1, alib::Colors::Blue);
   horizontalLine(1);
   horizontalLine(1,Colors::Green);
+  std::cout<<std::endl;
+  verticalLine(1,"Made by Abir-Tx",true);
 
 // LINUX & MAC ONLY TESTS
 #if defined LINUX || MAC
