@@ -327,7 +327,8 @@ The function also accepts a string param which is responsible to be printed on
 the mid point of all the lines. This is done by dividing the totalLine by 2
 which gives the middle number of all the printed lines. If the totalLine equals
 to an even number then we add one more line to make it odd & display the text in
-perfect middle
+perfect middle. It also accepts a bool parameter to specify if the text should
+be printed in the middle or not of the console
 */
 void verticalLine(unsigned short int count = 1,
                   std::string middlePointDisplayText = "",
