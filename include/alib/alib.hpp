@@ -271,14 +271,9 @@ void showLoadingScreen(std::string loadingText, unsigned short int count = 3,
 // Prints a full screen horizontal line dynamically on runtime depending on the
 // terminal size with optional colors
 
-// The Colors enum class used to specify colors while passing arguments to the function
-// This is also usefull to handle errors. 
-enum class Colors{
-  White=1,
-  Red,
-  Blue,
-  Green
-};
+// The Colors enum class used to specify colors while passing arguments to the
+// function This is also usefull to handle errors.
+enum class Colors { White = 1, Red, Blue, Green };
 
 void horizontalLine(unsigned short int count = 1,
                     Colors barColor = Colors::White) {
@@ -298,8 +293,8 @@ void horizontalLine(unsigned short int count = 1,
   else if (barColor == Colors::Green)
     SETBARCOLOR green;
   else {
-    /* TODO: Remove this error message as it is not needed or will not be executed anymore
-    because of usage of the enum class */
+    /* TODO: Remove this error message as it is not needed or will not be
+    executed anymore because of usage of the enum class */
     runBar = false;
     std::cerr << "The specified "
               << " Bar Color is not supported. Supported "
@@ -335,43 +330,37 @@ to an even number then we add one more line to make it odd & display the text in
 perfect middle
 */
 void verticalLine(unsigned short int count = 1,
-                  std::string middlePointDisplayText = "") {
+                  std::string middlePointDisplayText = "",
+                  bool isCenter = false) {
 #define DEFAULT_MIN_LINES 7
   unsigned short int totalLine = DEFAULT_MIN_LINES * count;
   unsigned short int midPoint = totalLine / 2;
 
-
-  if (totalLine % 2 == 0) totalLine += 1;
-  for (int i = 1; i < totalLine; i++) {
-    std::cout << "|" << std::endl;
-    if (i == midPoint) {
-      std::cout << "| " << middlePointDisplayText << std::endl;
-      continue;
-    }
-  }
-#undef DEFAULT_MIN_LINES
-}
-
-void verticalLine(unsigned short int count, std::string middlePointDisplayText, bool isCenter){
-#define DEFAULT_MIN_LINES 7
-  unsigned short int totalLine = DEFAULT_MIN_LINES * count;
-  unsigned short int midPoint = totalLine / 2;
-
-
-  int charSize = middlePointDisplayText.capacity();
+  if (isCenter) {
+    int charSize = middlePointDisplayText.capacity();
 
     // Getting the terminal center value & starting point of the decorations
     unsigned int termCenter = consoleWidth() / 2;
     int startingPoint = termCenter - (charSize / 2);
     int textToDecor_StartingPoint = startingPoint + ((charSize * 2) - charSize);
 
-  if (totalLine % 2 == 0) totalLine += 1;
-  for (int i = 1; i < totalLine; i++) {
-    std::cout << "|" << std::endl;
-    if (i == midPoint) {
-      std::cout << "| " <<std::setw(textToDecor_StartingPoint)
-              << std::setfill(' ') <<middlePointDisplayText << std::endl;
-      continue;
+    if (totalLine % 2 == 0) totalLine += 1;
+    for (int i = 1; i < totalLine; i++) {
+      std::cout << "|" << std::endl;
+      if (i == midPoint) {
+        std::cout << "| " << std::setw(textToDecor_StartingPoint)
+                  << std::setfill(' ') << middlePointDisplayText << std::endl;
+        continue;
+      }
+    }
+  } else {
+    if (totalLine % 2 == 0) totalLine += 1;
+    for (int i = 1; i < totalLine; i++) {
+      std::cout << "|" << std::endl;
+      if (i == midPoint) {
+        std::cout << "| " << middlePointDisplayText << std::endl;
+        continue;
+      }
     }
   }
 #undef DEFAULT_MIN_LINES
