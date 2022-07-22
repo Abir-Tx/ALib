@@ -3,7 +3,6 @@
 #include "alib.hpp"
 #include "rang.hpp"
 
-
 // Platform Detection Shortcuts
 #if defined(WIN32) || defined(_WIN32) || defined(_WIN64)
 #define WINDOWS
@@ -66,7 +65,6 @@ int main() {
   horizontalLine(1);
   horizontalLine(1, Colors::Green);
   std::cout << std::endl;
-  verticalLine(1, "", false, Colors::Red);
 
 // LINUX & MAC ONLY TESTS
 #if defined LINUX || MAC
@@ -83,5 +81,6 @@ int main() {
   std::cout << std::endl;
   verticalLine(1, "Made by Abir-Tx", true);
   verticalLine(1, "Color test", true, Colors::Blue);
+  verticalLine(1, "", false, Colors::Red);
 #endif
 }
