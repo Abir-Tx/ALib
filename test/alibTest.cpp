@@ -1,7 +1,7 @@
 /* Test cpp file for alib.hpp */
 
-#include "alib.hpp"
 #include "rang.hpp"
+#include "alib.hpp"
 
 // Platform Detection Shortcuts
 #if defined(WIN32) || defined(_WIN32) || defined(_WIN64)
