@@ -9,7 +9,7 @@ The project is inspired from the rang project.
 The project is maintained by Mushfiqur Rahman Abir aka Abir-Tx.
 
 
-Current Version:    v1.0
+Current Version:    v1.3.0
 Maintainer:         Mushfiqur Rahman Abir
 Developer Profile   https://www.github.com/Abir-Tx
 */
