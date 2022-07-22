@@ -332,10 +332,32 @@ be printed in the middle or not of the console
 */
 void verticalLine(unsigned short int count = 1,
                   std::string middlePointDisplayText = "",
-                  bool isCenter = false) {
+                  bool isCenter = false, Colors barColor = Colors::White) {
 #define DEFAULT_MIN_LINES 7
   unsigned short int totalLine = DEFAULT_MIN_LINES * count;
   unsigned short int midPoint = totalLine / 2;
+
+  /*
+lambda function to set the bar color according to the passed value in
+compile time. The & is passed to the square brackets so that all the
+variables are also passed to the capture list of the lambda function & to
+pass only the barColor variable to the lambda function the barColor is
+passed.
+*/
+  auto colorPrinter = [barColor]() {
+    // Defining the colors for the bars
+    if (barColor == Colors::White) {
+      std::cout << rang::fg::reset;
+    } else if (barColor == Colors::Blue) {
+      std::cout << rang::fg::blue;
+    } else if (barColor == Colors::Red) {
+      std::cout << rang::fg::red;
+    } else if (barColor == Colors::Green) {
+      std::cout << rang::fg::green;
+    } else {
+      std::cout << rang::fg::reset;
+    }
+  };
 
   if (isCenter) {
     int charSize = middlePointDisplayText.capacity();
@@ -346,20 +368,27 @@ void verticalLine(unsigned short int count = 1,
     int textToDecor_StartingPoint = startingPoint + ((charSize * 2) - charSize);
 
     if (totalLine % 2 == 0) totalLine += 1;
+
     for (int i = 1; i < totalLine; i++) {
-      std::cout << "|" << std::endl;
+      colorPrinter();
+      std::cout << "|" << rang::fg::reset << std::endl;
       if (i == midPoint) {
-        std::cout << "| " << std::setw(textToDecor_StartingPoint)
-                  << std::setfill(' ') << middlePointDisplayText << std::endl;
+        colorPrinter();
+        std::cout << "| " << rang::fg::reset
+                  << std::setw(textToDecor_StartingPoint) << std::setfill(' ')
+                  << middlePointDisplayText << std::endl;
         continue;
       }
     }
   } else {
     if (totalLine % 2 == 0) totalLine += 1;
     for (int i = 1; i < totalLine; i++) {
-      std::cout << "|" << std::endl;
+      colorPrinter();
+      std::cout << "|" << rang::fg::reset << std::endl;
       if (i == midPoint) {
-        std::cout << "| " << middlePointDisplayText << std::endl;
+        colorPrinter();
+        std::cout << "| " << rang::fg::reset << middlePointDisplayText
+                  << std::endl;
         continue;
       }
     }

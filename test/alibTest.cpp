@@ -62,6 +62,8 @@ int main() {
   horizontalLine(1,Colors::Green);
   std::cout<<std::endl;
   verticalLine(1,"Made by Abir-Tx",true);
+  verticalLine(1,"",false, Colors::Red);
+  verticalLine(1, "Color test", true, Colors::Blue);
 
 // LINUX & MAC ONLY TESTS
 #if defined LINUX || MAC
