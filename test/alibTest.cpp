@@ -21,17 +21,22 @@ using std::endl;
 
 // Main driver function for running the tests
 int main() {
-  /* 
-  This portion is for Windows only meaning all these function wll only be tested on windows machines only
-  .Because on GitHub Windows runners some fucntions i.e  void decorateMe(std::string textToDecor, unsigned short int lineBreaksNumber,
-  std::string decorator, bool isCenter) which uses/depends on the consoleWidth & consoleHeight function
-  causes to execute the program infinitely which in result runs for over than 6 hours and 6 hours is the max limit for Windows
-  GitHub runners. So as a resul the CI breaks with error which was a false error for the developers. So to eradicate this issue
-  I have disables those functions which caused this infinite running behaviour for Windows only but kept all the tests for Linux
-  cause Linux Runners doesn't have this problem on GitHub runner as of now.
+  /*
+  This portion is for Windows only meaning all these function wll only be tested
+  on windows machines only .Because on GitHub Windows runners some fucntions i.e
+  void decorateMe(std::string textToDecor, unsigned short int lineBreaksNumber,
+  std::string decorator, bool isCenter) which uses/depends on the consoleWidth &
+  consoleHeight function causes to execute the program infinitely which in
+  result runs for over than 6 hours and 6 hours is the max limit for Windows
+  GitHub runners. So as a resul the CI breaks with error which was a false error
+  for the developers. So to eradicate this issue I have disables those functions
+  which caused this infinite running behaviour for Windows only but kept all the
+  tests for Linux cause Linux Runners doesn't have this problem on GitHub runner
+  as of now.
 
-  I have figured out that the console height and width of Windows Runners are very very big in github & maybe for that reason
-  this strange problem is occuring
+  I have figured out that the console height and width of Windows Runners are
+  very very big in github & maybe for that reason this strange problem is
+  occuring
 
 
   TESTS FOR ALL (INCLUDING WINDOWS) ->
@@ -44,30 +49,39 @@ int main() {
 
   std::cout << std::endl;
 
-  countdown(3, 1, true, false);
-  showLoadingScreen("Starting");
+  // countdown(3, 1, true, false);
+  // showLoadingScreen("Starting");
 
-  std::cout << std::endl;
+  // std::cout << std::endl;
 
-  showLoadingScreen("Loading", 4, true);
+  // showLoadingScreen("Loading", 4, true);
 
   std::cout << std::endl;
 
   horizontalLine(1, Colors::Red);
   horizontalLine(1, alib::Colors::Blue);
   horizontalLine(1);
-  horizontalLine(1,Colors::Green);
+  horizontalLine(1, Colors::Green);
+  std::cout << std::endl;
 
 // LINUX & MAC ONLY TESTS
 #if defined LINUX || MAC
-  std::cout << "Console Width is (using consoleWidth Funtion): " <<(consoleWidth());
+  std::cout << "Console Width is (using consoleWidth Funtion): "
+            << (consoleWidth());
   std::cout << std::endl;
-  std::cout << "Console Width is (Using terminalWidth): "<<(terminalWidth());
-  std::cout<<std::endl;
+  std::cout << "Console Width is (Using terminalWidth): " << (terminalWidth());
+  std::cout << std::endl;
   decorateMe("ALib", 3, "+", true);
   decorateMe("ALib", 3, "+", false);
-  std::cout<<std::endl;
-  std::cout<<std::endl;
-  horizontalLine(2,Colors::Red);
-  #endif
+  std::cout << std::endl;
+  std::cout << std::endl;
+  horizontalLine(2, Colors::Red);
+  std::cout << std::endl;
+  // verticalLine();
+  verticalLine(1, "Made by Abir-Tx");
+  verticalLine(1, "Made by Abir-Tx", true);
+  verticalLine(1, "Color test", true, Colors::Blue);
+  verticalLine(1, "", false, Colors::Red);
+
+#endif
 }

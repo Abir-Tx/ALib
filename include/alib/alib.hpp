@@ -271,14 +271,9 @@ void showLoadingScreen(std::string loadingText, unsigned short int count = 3,
 // Prints a full screen horizontal line dynamically on runtime depending on the
 // terminal size with optional colors
 
-// The Colors enum class used to specify colors while passing arguments to the function
-// This is also usefull to handle errors. 
-enum class Colors{
-  White=1,
-  Red,
-  Blue,
-  Green
-};
+// The Colors enum class used to specify colors while passing arguments to the
+// function This is also usefull to handle errors.
+enum class Colors { White = 1, Red, Blue, Green };
 
 void horizontalLine(unsigned short int count = 1,
                     Colors barColor = Colors::White) {
@@ -298,8 +293,8 @@ void horizontalLine(unsigned short int count = 1,
   else if (barColor == Colors::Green)
     SETBARCOLOR green;
   else {
-    /* TODO: Remove this error message as it is not needed or will not be executed anymore
-    because of usage of the enum class */
+    /* TODO: Remove this error message as it is not needed or will not be
+    executed anymore because of usage of the enum class */
     runBar = false;
     std::cerr << "The specified "
               << " Bar Color is not supported. Supported "
@@ -322,12 +317,84 @@ void horizontalLine(unsigned short int count = 1,
 #undef SETBARCOLOR
 }
 
-/* void vertical(){
-  for (int i = 0 ; i < consoleHeight(); i++){
-    std::cout<<"|" << std::setw(consoleWidth()-1) << std::setfill(' ')<< "|" <<
-std::endl;
+/*
+The function prints vertical line to the left side of the console. By default
+the minimum amount of lines (|) are 7 and this can be increased by passing the
+count parameter. If count is 1 then only 7 lines will be printed if count is 2
+then (7*2)14 lines will be printed & so on.
+
+The function also accepts a string param which is responsible to be printed on
+the mid point of all the lines. This is done by dividing the totalLine by 2
+which gives the middle number of all the printed lines. If the totalLine equals
+to an even number then we add one more line to make it odd & display the text in
+perfect middle. It also accepts a bool parameter to specify if the text should
+be printed in the middle or not of the console
+*/
+void verticalLine(unsigned short int count = 1,
+                  std::string middlePointDisplayText = "",
+                  bool isCenter = false, Colors barColor = Colors::White) {
+#define DEFAULT_MIN_LINES 7
+  unsigned short int totalLine = DEFAULT_MIN_LINES * count;
+  unsigned short int midPoint = totalLine / 2;
+
+  /*
+lambda function to set the bar color according to the passed value in
+compile time. The & is passed to the square brackets so that all the
+variables are also passed to the capture list of the lambda function & to
+pass only the barColor variable to the lambda function the barColor is
+passed.
+*/
+  auto colorPrinter = [barColor]() {
+    // Defining the colors for the bars
+    if (barColor == Colors::White) {
+      std::cout << rang::fg::reset;
+    } else if (barColor == Colors::Blue) {
+      std::cout << rang::fg::blue;
+    } else if (barColor == Colors::Red) {
+      std::cout << rang::fg::red;
+    } else if (barColor == Colors::Green) {
+      std::cout << rang::fg::green;
+    } else {
+      std::cout << rang::fg::reset;
+    }
+  };
+
+  if (isCenter) {
+    int charSize = middlePointDisplayText.capacity();
+
+    // Getting the terminal center value & starting point of the decorations
+    unsigned int termCenter = consoleWidth() / 2;
+    int startingPoint = termCenter - (charSize / 2);
+    int textToDecor_StartingPoint = startingPoint + ((charSize * 2) - charSize);
+
+    if (totalLine % 2 == 0) totalLine += 1;
+
+    for (int i = 1; i < totalLine; i++) {
+      colorPrinter();
+      std::cout << "|" << rang::fg::reset << std::endl;
+      if (i == midPoint) {
+        colorPrinter();
+        std::cout << "| " << rang::fg::reset
+                  << std::setw(textToDecor_StartingPoint) << std::setfill(' ')
+                  << middlePointDisplayText << std::endl;
+        continue;
+      }
+    }
+  } else {
+    if (totalLine % 2 == 0) totalLine += 1;
+    for (int i = 1; i < totalLine; i++) {
+      colorPrinter();
+      std::cout << "|" << rang::fg::reset << std::endl;
+      if (i == midPoint) {
+        colorPrinter();
+        std::cout << "| " << rang::fg::reset << middlePointDisplayText
+                  << std::endl;
+        continue;
+      }
+    }
   }
-} */
+#undef DEFAULT_MIN_LINES
+}
 
 }  // end of namespace alib
 
