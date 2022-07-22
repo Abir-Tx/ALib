@@ -58,8 +58,6 @@ int main() {
 
   std::cout << std::endl;
 
-  // verticalLine();
-  verticalLine(1, "Made by Abir-Tx");
   horizontalLine(1, Colors::Red);
   horizontalLine(1, alib::Colors::Blue);
   horizontalLine(1);
@@ -79,8 +77,11 @@ int main() {
   std::cout << std::endl;
   horizontalLine(2, Colors::Red);
   std::cout << std::endl;
+  // verticalLine();
+  verticalLine(1, "Made by Abir-Tx");
   verticalLine(1, "Made by Abir-Tx", true);
   verticalLine(1, "Color test", true, Colors::Blue);
   verticalLine(1, "", false, Colors::Red);
+
 #endif
 }
