@@ -32,9 +32,9 @@ The motivation of this project is to get rid of writing most/frequently needed f
 ## Linux
 Download the `alib.hpp` from the **[Releases](https://github.com/Abir-Tx/ALib/releases)** section & copy it to the `/usr/include` folder & that's it
 ### Arch Linux
-Arch users can install the library from [AUR](https://aur.archlinux.org/packages/alib) easily using `pacman`
+Arch users can install the library from [AUR](https://aur.archlinux.org/packages/alib) easily using `yay`
 ```bash
-pacman -S alib
+yay -S alib
 ```
 
 # Contributing 
